@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_07_080649) do
+ActiveRecord::Schema.define(version: 2024_04_07_010320) do
 
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 2024_04_07_080649) do
     t.string "image01"
     t.string "image02"
     t.string "image03"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", charset: "utf8mb4", force: :cascade do |t|
-    t.string "user_name", null: false
-    t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

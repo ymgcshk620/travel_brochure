@@ -1,25 +1,26 @@
 <nav class="navbar navbar-expand-md bg-white text-right shadow-sm m-0">
   <div class="container display-flex">
-     <div>
-     <%= link_to root_path, data: { turbolinks: false } do %>
-     <%= image_tag "logo.png", class: "img-fluid", width: "180px" %>
-     <% end %>
-      </div>
-    <div class="w-100  d-flex justify-content-end align-items-center bg-primary-subtle">
-    <%= link_to new_post_path, class: "btn btn-purple ", data: { turbolinks: false } do %>
-    <i class="bi bi-calendar3"></i>
-    しおりを作成
+    <div>
+      <%= link_to root_path, data: { turbolinks: false } do %>
+        <%= image_tag "logo.png" , class: "img-fluid" , width: "180px" %>
           <% end %>
-   <div class="dropdown">
-  <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    ユーザー名
-  </button>
-  <ul class="dropdown-menu m-0">
-    <li><button class="dropdown-item" type="button">アカウント編集</button></li>
-    <li><button class="dropdown-item" type="button">ログアウト</button></li>
-  </ul>
-</div>
-      </div>
     </div>
+    <div class="w-100  d-flex justify-content-end align-items-center bg-primary-subtle">
+      <%= link_to new_post_path, class: "btn btn-purple " , data: { turbolinks: false } do %>
+        <i class="bi bi-calendar3"></i>
+        しおりを作成
+        <% end %>
+          <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ユーザー名
+            </button>
+            <ul class="dropdown-menu m-0">
+              <li><button class="dropdown-item" type="button">アカウント編集</button></li>
+              <li><button class="dropdown-item" type="button">ログアウト</button></li>
+            </ul>
+          </div>
+    </div>
+  </div>
   </div>
 </nav>
