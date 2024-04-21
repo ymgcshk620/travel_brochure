@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_18_125203) do
+ActiveRecord::Schema.define(version: 2024_04_21_094628) do
 
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id"

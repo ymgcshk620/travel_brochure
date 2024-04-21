@@ -17,9 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    
     @post = Post.new(post_params)
-
     if @post.save
       redirect_to root_path, notice: 'しおりが投稿されました。'
     else
@@ -49,7 +47,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :summary, :items, :budget, :start_time, :end_time, :text, :image01, :image02, :image03)
   end
 
   def set_post
@@ -59,5 +57,6 @@ class PostsController < ApplicationController
    def redirect_unless_creator!
     redirect_to root_path unless @post.user == current_user
   end
+  
 end
 
