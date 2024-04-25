@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="text-center my-4">
+    <span class="text-main fs-2 ms-2">しおりを作成する</span>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-10 col-md-6">
+      <%= form_with model: post, local: true do |f| %>
+        <div class="mb-4">
+          <%= f.label :title, "タイトル", class: "text-secondary fw-bold mb-2" %>
+          <span class="p_required">必須</span>
+          <%= f.text_field :title, class: "form-control shadow-sm py-md-2" %>
+        </div>
+        
+         <div class="mb-4">
+          <%= f.label :summary, "概要", class: "text-secondary fw-bold mb-2" %>
+          <%= f.text_field :summary, class: "form-control shadow-sm py-md-2" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :items, "持ち物", class: "text-secondary fw-bold mb-2" %>
+          <%= f.text_area :items, class: "form-control shadow-sm py-md-5" %>
+        </div>
+        <div class="mb-4">
+          <%= f.label :budget, "予算", class: "text-secondary fw-bold mb-2" %>
+          <%= f.text_field :budget, class: "form-control shadow-sm py-md-3" %>
+        </div>
+        
+       <div class ="input-date">開始時刻
+            <input name="time" type="time" />
+        </div>
+        
+        <div class="mb-4">
+          <%= f.label :text, "内容", class: "text-secondary fw-bold mb-2" %>
+          <%= f.text_area :text, class: "form-control shadow-sm py-md-5" %>
+        </div>
+        
+        <div class ="input-date">終了時刻
+            <input name="time" type="time" />
+        </div>
+        
+        
+        <div class="my-4">
+          <%= f.label :image01, "投稿画像1枚目", class: "text-secondary fw-bold mb-3" %>
+          <span class="p_required">必須</span>
+          <%= f.file_field :image1, class: "d-block" %>
+        </div>
+        <div class="my-4">
+          <%= f.label :image02, "投稿画像2枚目", class: "text-secondary fw-bold mb-3" %>
+          <%= f.file_field :image2, class: "d-block" %>
+        </div>
+        <div class="my-4">
+          <%= f.label :image03, "投稿画像3枚目", class: "text-secondary fw-bold mb-3" %>
+          <%= f.file_field :image3, class: "d-block" %>
+        </div>
+        <div class="text-center">
+          <%= f.submit "しおりを作成", class: "btn-primary shadow-sm fw-bold mt-4 px-5 py-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

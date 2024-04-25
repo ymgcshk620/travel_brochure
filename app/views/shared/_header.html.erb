@@ -3,7 +3,7 @@
     <div>
       <%= link_to root_path, data: { turbolinks: false } do %>
         <%= image_tag "logo.png" , class: "img-fluid" , width: "180px" %>
-          <% end %>
+        <% end %>
     </div>
     <div class="w-100  d-flex justify-content-end align-items-center bg-primary-subtle">
       <%= link_to new_post_path, class: "btn btn-purple " , data: { turbolinks: false } do %>
@@ -12,13 +12,16 @@
         <% end %>
           <div class="dropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              ユーザー名
+              aria-expanded="false">ユーザー名
             </button>
-            <ul class="dropdown-menu m-0">
-              <li><button class="dropdown-item" type="button">アカウント編集</button></li>
-              <li><button class="dropdown-item" type="button">ログアウト</button></li>
-            </ul>
+            <div class="dropdown-menu m-0 text-wrap">
+              <% if user_signed_in? %>
+              <%= button_to "アカウント編集", edit_user_registration_path, class: "dropdown-item text-secondary border-bottom py-2", data: { turbolinks: false } %>
+              <%= button_to "ログアウト", destroy_user_session_path, class: "dropdown-item text-secondary py-2", method: :delete %>
+               <% else %>
+               <%= link_to "ログイン", new_user_session_path, class: "btn text-purple me-3", data: { turbolinks: false } %>
+              <%= link_to "無料会員登録", new_user_registration_path, class: "btn btn-purple me-5 px-3 py-2", data: { turbolinks: false } %>
+               <% end %>
           </div>
     </div>
   </div>
