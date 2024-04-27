@@ -2,13 +2,15 @@
   <div class="text-center my-4">
     <span class="text-main fs-2 ms-2">しおりを作成する</span>
   </div>
-
+  <%= render "shared/validation_error", instance: @post %>
+  
   <div class="row justify-content-center">
     <div class="col-10 col-md-6">
       <%= form_with model: post, local: true do |f| %>
+      
         <div class="mb-4">
-          <%= f.label :title, "タイトル", class: "text-secondary fw-bold mb-2" %>
-          <span class="p_required">必須</span>
+          <%= f.label :title, "タイトル(必須)", class: "text-secondary fw-bold mb-2" %>
+          <span class="p_required"></span>
           <%= f.text_field :title, class: "form-control shadow-sm py-md-2" %>
         </div>
         
@@ -18,32 +20,45 @@
         </div>
         <div class="mb-4">
           <%= f.label :items, "持ち物", class: "text-secondary fw-bold mb-2" %>
-          <%= f.text_area :items, class: "form-control shadow-sm py-md-5" %>
+          <%= f.text_area :items, class: "form-control shadow-sm pb-md-5" %>
         </div>
+        
         <div class="mb-4">
           <%= f.label :budget, "予算", class: "text-secondary fw-bold mb-2" %>
           <%= f.text_field :budget, class: "form-control shadow-sm py-md-3" %>
         </div>
         
-       <div class ="input-date">開始時刻
-            <input name="time" type="time" />
+        <div class="mb-4" for="">
+             <%= f.label :start_date, '開始日', class: 'text-secondary fw-bold mb-2' %>
+            <%= f.date_field :start_date, class: 'form-control' %>
+         </div>
+         
+         <div class="mb-4" for="">
+            <%= f.label :start_time, '開始時間', class: 'text-secondary fw-bold mb-2' %>
+            <%= f.time_field :start_time, class: 'form-control' %>
+        </div>
+      
+        
+        <div class="mb-4">
+          <%= f.label :text, "内容", class: "text-secondary fw-bold mb-2 display:block" %>
+          <%= f.text_area :text, class: "form-control shadow-sm pb-md-5" %>
         </div>
         
         <div class="mb-4">
-          <%= f.label :text, "内容", class: "text-secondary fw-bold mb-2" %>
-          <%= f.text_area :text, class: "form-control shadow-sm py-md-5" %>
+             <%= f.label :end_date, '終了日', class: 'text-secondary fw-bold mb-2' %>
+            <%= f.date_field :end_date, class: 'form-control' %>
+         </div>
+         
+         <div class="mb-4">
+            <%= f.label :end_time, '終了時間', class: 'text-secondary fw-bold mb-2' %>
+            <%= f.time_field :end_time, class: 'form-control' %>
         </div>
-        
-        <div class ="input-date">終了時刻
-            <input name="time" type="time" />
-        </div>
-        
         
         <div class="my-4">
-          <%= f.label :image01, "投稿画像1枚目", class: "text-secondary fw-bold mb-3" %>
-          <span class="p_required">必須</span>
+          <%= f.label :image01, "投稿画像1枚目(必須)", class: "text-secondary fw-bold mb-3" %>
           <%= f.file_field :image1, class: "d-block" %>
         </div>
+        
         <div class="my-4">
           <%= f.label :image02, "投稿画像2枚目", class: "text-secondary fw-bold mb-3" %>
           <%= f.file_field :image2, class: "d-block" %>
@@ -53,7 +68,7 @@
           <%= f.file_field :image3, class: "d-block" %>
         </div>
         <div class="text-center">
-          <%= f.submit "しおりを作成", class: "btn-primary shadow-sm fw-bold mt-4 px-5 py-3" %>
+          <%= f.submit "しおりを作成", class: "btn btn-primary fw-bold mt-4 px-5 py-3" %>
         </div>
       <% end %>
     </div>
