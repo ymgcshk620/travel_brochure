@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_21_094628) do
+ActiveRecord::Schema.define(version: 2024_04_27_065041) do
 
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title", null: false
     t.string "summary"
     t.string "items"
-    t.bigint "budget"
+    t.string "budget"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "text"

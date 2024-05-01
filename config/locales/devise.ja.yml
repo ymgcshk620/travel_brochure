@@ -6,7 +6,9 @@ ja:
     attributes:
       post:
         title: "タイトル"
-        content: "内容"
+        summary: "概要"
+        start_time: "開始時刻"
+        text: "内容"
       user:
         email: "メールアドレス"
         password: "パスワード"
@@ -16,11 +18,9 @@ ja:
       models:
         post:
           attributes:
-            title:
+              title: 
               blank: "を入力してください。"
               too_long: "は30文字以内で入力してください。"
-            content:
-              blank: "を入力してください。"
         user:
           attributes:
             email:
@@ -46,3 +46,4 @@ ja:
               blank: "を入力してください。"
             username:
               blank: "を入力してください。"
+              
