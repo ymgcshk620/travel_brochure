@@ -1,0 +1,21 @@
+
+/* univeral */
+
+*{
+  margin:0px;
+  padding:0px;
+}
+
+.navbar {
+	background: url(station.png) center / cover;
+	height:300px;
+	margin:0px;
+}
+.wrapper{
+     width: 100%;
+     position: relative;
+     height:auto !important; /*IE6対策*/
+     height: 140px; /*IE6対策*/
+     min-height: 100%;
+}
+

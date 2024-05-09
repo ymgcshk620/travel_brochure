@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc).limit(5)
   end
   
   def show
@@ -26,7 +26,9 @@ class PostsController < ApplicationController
   end
 
   def edit
-    
+      @post.image01.cache! unless @post.image01.blank?
+      @post.image02.cache! unless @post.image02.blank?
+      @post.image03.cache! unless @post.image03.blank?
   end
 
   def update
@@ -39,6 +41,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.remove_image01!
+    @post.save
     # 特定の学習メモを削除する処理
     @post.destroy
     redirect_to root_path, notice: 'しおりが削除されました。'
@@ -47,14 +51,16 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :summary, :items, :budget, :start_time, :end_time, :text, :image01, :image02, :image03)
+    params.require(:post).permit(:title, :summary, :items, :budget, :start_time, :end_time, :text, :image01, :image02, :image03,:image_cache,
+:remove_image01, :remove_image02, :remove_image03).merge(user_id: current_user.id)
   end
+  
 
   def set_post
     @post = Post.find(params[:id])
   end
   
-   def redirect_unless_creator!
+  def redirect_unless_creator!
     redirect_to root_path unless @post.user == current_user
   end
   

@@ -1,0 +1,16 @@
+<div class="mb-5">
+    <div class="px-4">
+     <div class="card pt-3 mt-5 mx-auto" style="width:800px">
+      <p class="text-body mb-3 pt-3 px-4 fs-2"><%= @post.title %></p>
+      <p class="text-dark mb-3 pt-3 px-4 fs-5"><%= @post.summary %></p>
+      <p class="text-dark mb-3 pt-3 px-4 fs-5">持ち物：<%= @post.items %></p>
+      <p class="text--dark mb-3 pt-3 px-4 fs-5">予算：<%= @post.budget %></p>
+      <p class="text--dark mb-3 pt-3 px-4 fs-5">開始時間：<%= @post.start_time.strftime("%Y年%m月%d日%-H時%M分") %></p>
+      <p class="text-dark mb-4 pt-3 px-4 fs-5">内容：<%= @post.text %></p>
+      <% if @post.end_time.present? %>
+       <p class="text-dark mb-3 pt-3 px-4 fs-5">終了時間：<%= @post.end_time.strftime("%Y年%m月%d日%-H時%M分") %></p>
+      <% end %>
+    <%= render "carousel", post: @post %>
+  </div>
+  </div>
+</div>
