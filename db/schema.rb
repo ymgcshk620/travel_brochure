@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_27_065041) do
+ActiveRecord::Schema.define(version: 2024_04_18_125203) do
 
   create_table "posts", charset: "utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title", null: false
     t.string "summary"
     t.string "items"
-    t.string "budget"
+    t.bigint "budget"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "text"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2024_04_27_065041) do
     t.string "image03"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", charset: "utf8mb4", force: :cascade do |t|
