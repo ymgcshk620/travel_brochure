@@ -41,7 +41,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true
     # add_index :users, :unlock_token,         unique: true
-  end
+   end
 
   def self.down
     # By default, we don't want to make any assumption about how to roll back a migration when your
@@ -49,4 +49,4 @@ class AddDeviseToUsers < ActiveRecord::Migration[6.1]
     raise ActiveRecord::IrreversibleMigration
   end
 end
-end
+

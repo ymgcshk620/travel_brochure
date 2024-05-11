@@ -1,6 +1,6 @@
 <div class="container">
   <div class="text-center my-4">
-    <span class="text-main fs-2 ms-2">しおりを作成する</span>
+    <span class="text-main fs-2 ms-2">しおりを<%= action_text %>する</span>
   </div>
   <%= render "shared/validation_error", instance: @post %>
   
@@ -55,20 +55,31 @@
         </div>
         
         <div class="my-4">
-          <%= f.label :image01, "投稿画像1枚目(必須)", class: "text-secondary fw-bold mb-3" %>
-          <%= f.file_field :image1, class: "d-block" %>
+          <%= f.label :image01, "投稿画像1枚目", class: "text-secondary fw-bold mb-3" %>
+          <%= f.file_field :image01, class: "d-block" %>
+           <%= f.hidden_field :image01_cache %>
+          <label><%= f.check_box :remove_image01 %>画像を削除する</label>
+           <%= image_tag @post.image01.url, class: "flex-shrink-0 fit-cover"if @post.image01? %>
         </div>
         
         <div class="my-4">
           <%= f.label :image02, "投稿画像2枚目", class: "text-secondary fw-bold mb-3" %>
-          <%= f.file_field :image2, class: "d-block" %>
+          <%= f.file_field :image02, class: "d-block" %>
+          <%= f.hidden_field :image02_cache %>
+          <label><%= f.check_box :remove_image02 %>画像を削除する</label>
+          <%= image_tag @post.image02.url, class: "w-200 flex-shrink-0 fit-cover", size:"100×100" if @post.image02? %>
         </div>
+        
         <div class="my-4">
           <%= f.label :image03, "投稿画像3枚目", class: "text-secondary fw-bold mb-3" %>
-          <%= f.file_field :image3, class: "d-block" %>
+          <%= f.file_field :image03, class: "d-block" %>
+          <%= f.hidden_field :image03_cache %>
+          <label><%= f.check_box :remove_image03 %>画像を削除する</label>
+          <%= image_tag @post.image03.url, class: "w-200 flex-shrink-0 fit-cover" if @post.image03? %>
         </div>
+        
         <div class="text-center">
-          <%= f.submit "しおりを作成", class: "btn btn-primary fw-bold mt-4 px-5 py-3" %>
+          <%= f.submit "作成", class: "btn btn-primary fw-bold mt-4 px-5 py-3" %>
         </div>
       <% end %>
     </div>

@@ -1,0 +1,40 @@
+<div id="carousel-<%= post.id %>" class="carousel slide">
+  <div class="carousel-indicators" style="margin-right: 50%; margin-left: 47%; width: 30px;">
+    <button type="button" data-bs-target="#carousel-<%= post.id %>" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carousel-<%= post.id %>" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carousel-<%= post.id %>" data-bs-slide-to="2"></button>
+  </div>
+
+  <div class="carousel-inner d-block">
+    <div class="carousel-item active">
+      <% if post.image01.present? %> 
+        <%= image_tag post.image01.url, class: "img d-block w-100 flex-shrink-0",alt: post.image01.identifier if post.image01.present? %>
+      <% else %>
+        <%= image_tag "noimage.png", class: "img d-block w-100 flex-shrink-0" %>
+      <% end %>
+    </div>
+    <div class="carousel-item">
+      <% if post.image02.present? %> 
+        <%= image_tag post.image02.url, class: "img d-block w-100 flex-shrink-0", alt: post.image02.identifier if post.image02.present? %>
+      <% else %>
+        <%= image_tag "noimage.png", class: "img d-block w-100 flex-shrink-0" %>
+      <% end %>
+    </div>
+    <div class="carousel-item">
+      <% if post.image03.present? %> 
+        <%= image_tag post.image03.url, class: "img d-block w-100 flex-shrink-0", alt: post.image03.identifier if post.image03.present? %>
+      <% else %>
+        <%= image_tag "noimage.png", class: "img d-block w-100 flex-shrink-0" %>
+      <% end %>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carousel-<%= post.id %>" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carousel-<%= post.id %>" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

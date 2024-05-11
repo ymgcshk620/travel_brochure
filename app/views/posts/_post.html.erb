@@ -1,0 +1,13 @@
+<div class="mb-5 ">
+  <div class="card pt-3">
+    <div class="d-flex justify-content-between center-block px-4">
+      <div>
+      </div>
+       <%= render "dropdown", post: post %>
+    </div>
+    <p class="text-body mb-3 pt-3 px-4 fs-2"><%= post.title %></p>
+    <p class="text-dark mb-3 pt-3 px-4 "><%= post.summary %></p>
+    <p class="text-dark mb-3 pt-3 px-4 "><%= post.items %></p>
+      <%= render "carousel", post: post %>
+  </div>
+</div>
