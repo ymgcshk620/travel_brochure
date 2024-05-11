@@ -5,7 +5,7 @@ class Post < ApplicationRecord
   validate :start_end_check
   
    def start_end_check
-     if start_time.present? && end_time.present? && start_time < end_time
+     if start_time.present? && end_time.present? && start_time > end_time
      errors.add(:end_time, "は開始日時より遅い時間を選択してください。")
      end
    end
