@@ -11,6 +11,31 @@
 	height:300px;
 	margin:0px;
 }
+
+#title{
+  position: relative;
+  padding: 0.5em;
+  background: #dbebf8;;
+  color: white;
+}
+
+#title:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(149, 158, 155);
+}
+.content{
+  display: inline-block;
+  font-weight:bold;
+  border-bottom: dotted 3px #38b3f2;
+  margin: 3px 50px;
+  padding: 0 0 5px 0;
+}
+
 .wrapper{
      width: 100%;
      position: relative;

@@ -59,7 +59,7 @@
           <%= f.file_field :image01, class: "d-block" %>
            <%= f.hidden_field :image01_cache %>
           <label><%= f.check_box :remove_image01 %>画像を削除する</label>
-           <%= image_tag @post.image01.url, class: "flex-shrink-0 fit-cover"if @post.image01? %>
+           <%= image_tag @post.image01.url, style: "width:200px", class: "flex-shrink-0 fit-cover"if @post.image01? %>
         </div>
         
         <div class="my-4">
@@ -67,7 +67,7 @@
           <%= f.file_field :image02, class: "d-block" %>
           <%= f.hidden_field :image02_cache %>
           <label><%= f.check_box :remove_image02 %>画像を削除する</label>
-          <%= image_tag @post.image02.url, class: "w-200 flex-shrink-0 fit-cover", size:"100×100" if @post.image02? %>
+          <%= image_tag @post.image02.url, style: "width:200px",class: "w-200 flex-shrink-0 fit-cover", size:"100×100" if @post.image02? %>
         </div>
         
         <div class="my-4">
@@ -75,7 +75,7 @@
           <%= f.file_field :image03, class: "d-block" %>
           <%= f.hidden_field :image03_cache %>
           <label><%= f.check_box :remove_image03 %>画像を削除する</label>
-          <%= image_tag @post.image03.url, class: "w-200 flex-shrink-0 fit-cover" if @post.image03? %>
+          <%= image_tag @post.image03.url, style: "width:200px",class: "w-200 flex-shrink-0 fit-cover" if @post.image03? %>
         </div>
         
         <div class="text-center">
